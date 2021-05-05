@@ -28,10 +28,16 @@ public class RestaurantService {
         return newRestaurant;
     }
 
+//    public Restaurant removeRestaurant(String restaurantName) throws restaurantNotFoundException {
+//        Restaurant restaurantToBeRemoved = findRestaurantByName(restaurantName);
+//        if(restaurantToBeRemoved == null)
+//            throw new restaurantNotFoundException(restaurantToBeRemoved.getName());
+//        restaurants.remove(restaurantToBeRemoved);
+//        return restaurantToBeRemoved;
+//    }
+
     public Restaurant removeRestaurant(String restaurantName) throws restaurantNotFoundException {
         Restaurant restaurantToBeRemoved = findRestaurantByName(restaurantName);
-        if(restaurantToBeRemoved == null)
-            throw new restaurantNotFoundException(restaurantToBeRemoved.getName());
         restaurants.remove(restaurantToBeRemoved);
         return restaurantToBeRemoved;
     }
