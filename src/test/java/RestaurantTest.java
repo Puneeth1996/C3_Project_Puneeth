@@ -19,6 +19,13 @@ class RestaurantTest {
     @Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
+        LocalTime openingTime = LocalTime.parse("10:30:00");
+        LocalTime closingTime = LocalTime.parse("22:00:00");
+        restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        LocalTime testTime    = LocalTime.parse("23:00:00");
+        // This should return false in case of the getCurrentTime() => LocalTime.now() return outside of the closingTime and opening time
+        // THis below  method is failing as the assertion first method doesnot evaluate to true
+        assertEquals(restaurant.isTestRestaurantOpen(testTime), false);
 
     }
 
